@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="title" [style.background-color]="bgColor$ | async">
+        Movie List
+    </div>
+    <button type="button" mat-icon-button matTooltip="Add Movie" (click)="addMovie()">
+        <mat-icon>add_circle</mat-icon>
+    </button>
+    <button 
+        type="color" 
+        mat-icon-button 
+        matTooltip="Change master background color"
+        [cpOKButton]="true"
+        [cpPosition]="'left'"
+        [cpPositionOffset]="'50%'"
+        [cpPositionRelativeToArrow]="true"
+        [colorPicker]="bgColor$ | async"
+        (colorPickerSelect)="changeMasterBgColor($event)">
+        <mat-icon>color_lens</mat-icon>
+    </button>
+</div>
+<movies></movies>

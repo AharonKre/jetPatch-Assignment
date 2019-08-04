@@ -1,0 +1,45 @@
+<div class="create-collection-modal">
+        <h2 mat-dialog-title class="font-5">Add New Movie</h2>
+        <mat-dialog-content [formGroup]="addMovieForm">
+            <form class="add-movie-form">
+                <mat-form-field>
+                    <input 
+                        matInput 
+                        placeholder="Name" 
+                        [formControl]="addMovieForm.get('name')"
+                        [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="addMovieForm.get('name').hasError('required')">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input 
+                        matInput 
+                        placeholder="Link" 
+                        [formControl]="addMovieForm.get('imdbLink')"
+                        [errorStateMatcher]="matcher">
+                    <mat-error 
+                        *ngIf="addMovieForm.get('imdbLink').hasError('pattern') && !addMovieForm.get('imdbLink').hasError('required')">
+                        Please enter a valid link
+                    </mat-error>
+                    <mat-error *ngIf="addMovieForm.get('imdbLink').hasError('required')">
+                        Link is required
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button 
+                mat-raised-button
+                color="primary"
+                [disabled]="addMovieForm.invalid"
+                [mat-dialog-close]="addMovieForm.value">
+                Save
+            </button>
+            <button
+                mat-raised-button
+                [mat-dialog-close]="null">
+                Cancel
+            </button>
+        </mat-dialog-actions>
+    </div>
