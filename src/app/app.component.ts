@@ -5,7 +5,8 @@ import { MoviesService } from 'app/services/movies.service';
 @Component({
   selector: 'app-root',
   template: `
-    <router-outlet></router-outlet>
+    <m-header></m-header>
+    <movies></movies>
   `
 })
 export class AppComponent {

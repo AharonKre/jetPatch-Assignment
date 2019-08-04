@@ -6,11 +6,12 @@ import { MoviesService, MovieItem } from 'app/services/movies.service';
 import { AddMovieDialog } from 'app/modals/add-movie/add-movie.modal';
 
 @Component({
-    templateUrl: './home.page.html',
-    styleUrls: ['./home.page.scss']
+    selector: 'm-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 
-export class HomePage {
+export class HeaderComponent {
     bgColor$ = this.colorService.bgColor$;
 
     constructor(

@@ -4,9 +4,7 @@ import { SharedModule } from 'app/modules/shared.module';
 import { AddMovieDialog } from 'app/modals/add-movie/add-movie.modal';
 
 @NgModule({
-    imports: [
-        SharedModule
-    ],
+    imports: [SharedModule],
     declarations: [AddMovieDialog],
     entryComponents: [AddMovieDialog],
     exports: [AddMovieDialog]

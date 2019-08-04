@@ -8,14 +8,14 @@ import { SharedModule } from 'app/modules/shared.module';
 import { AppRoutingModule } from 'app/app-routing.module';
 
 import { AppComponent } from 'app/app.component';
-import { HomePage } from 'app/pages/home/home.page';
 import { MoviesComponent } from 'app/components/movies/movies.component';
+import { HeaderComponent } from 'app/components/header/header.component';
 
 @NgModule({
   declarations: [
-    HomePage,
     AppComponent,
-    MoviesComponent
+    MoviesComponent,
+    HeaderComponent
   ],
   imports: [
     CoreModule,           // contains all services
