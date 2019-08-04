@@ -2,18 +2,20 @@
     <ng-container *ngFor="let movie of (movies$ | async); let i = index">
         <mat-card [style.background-color]="movie.backgroundColor || (bgColor$ | async)">
             <mat-card-content>
-                <button
-                    type="color" 
-                    mat-icon-button 
-                    matTooltip="Change background color"
-                    [cpOKButton]="true"
-                    [cpPosition]="'bottom'"
-                    [cpPositionOffset]="'50%'"
-                    [cpPositionRelativeToArrow]="true"
-                    [colorPicker]="movie.backgroundColor"
-                    (colorPickerSelect)="changeContainerColor($event, i)">
-                    <mat-icon>color_lens</mat-icon>
-                </button>
+                <span class="color-btn-wrapper">
+                    <button
+                        type="color" 
+                        mat-icon-button 
+                        matTooltip="Change background color"
+                        [cpOKButton]="true"
+                        [cpPosition]="'bottom'"
+                        [cpPositionOffset]="'50%'"
+                        [cpPositionRelativeToArrow]="true"
+                        [colorPicker]="movie.backgroundColor || (bgColor$ | async)"
+                        (colorPickerSelect)="changeContainerColor($event, i)">
+                        <mat-icon>color_lens</mat-icon>
+                    </button>
+                </span>
                 <div>{{ movie.name }}</div>
                 <a [href]="movie.imdbLink" target="_blank" ellipsisOverflow>
                     Watch <b>{{movie.name}}</b> on Imdb
